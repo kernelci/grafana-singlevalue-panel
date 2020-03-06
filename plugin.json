@@ -1,0 +1,21 @@
+{
+  "type": "panel",
+  "name": "Link Singlestat",
+  "id": "grafana-linksinglestat-panel",
+
+  "info": {
+    "description": "Singlestat-like panel for grafana, with links",
+    "author": {
+      "name": "Red Hat",
+      "url": "https://redhat.com"
+    },
+    "keywords": ["singlestat", "link", "panel"],
+    "version": "1.0.0",
+    "updated": "2020-03-05"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "6.6.0",
+    "plugins": [ ]
+  }
+}
