@@ -52,7 +52,7 @@ class LinkSingleStatCtrl extends MetricsPanelCtrl {
     }
 
     adjustFontSize() {
-        const elem = document.getElementsByClassName("linksinglestat-panel")[0].parentNode;
+        const elem = document.getElementsByClassName("singlestat-panel")[0].parentNode;
         const boundingRectangle = elem.getBoundingClientRect();
         const width = boundingRectangle.width;
         const height = boundingRectangle.height;
