@@ -34,6 +34,11 @@ class LinkSingleStatCtrl extends MetricsPanelCtrl {
         }
 
         const results = dataList[0];
+
+        if (!results) {
+            return;
+        }
+
         const data = results.rows && results.rows[0];
 
         // Imitate the "templating" syntax of the table panel plugin
@@ -51,15 +56,13 @@ class LinkSingleStatCtrl extends MetricsPanelCtrl {
         );
     }
 
+    render() {
+        this.adjustFontSize();
+    }
+
     adjustFontSize() {
-        const elem = document.getElementsByClassName("singlestat-panel")[0].parentNode;
-        const boundingRectangle = elem.getBoundingClientRect();
-        const width = boundingRectangle.width;
-        const height = boundingRectangle.height;
-        // Allow to use a bit more space for wide gauges
-        const dimension = Math.min(width, height * 1.3);
-        const fontScale = parseInt(this.panel.valueFontSize, 10) / 100;
-        this.fontSize = Math.min(dimension / 5, 100) * fontScale;
+        const BASE_FONT_SIZE = 38;
+        this.fontPixelSize = (parseInt(this.panel.valueFontSize, 10) / 100) * BASE_FONT_SIZE;
     }
 }
 
