@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/module.js"],"names":["LinkSingleStatCtrl"],"mappings":";;;;;;;;AAAQA,wB,wBAAAA,kB;;;2BAGNA,kB","file":"module.js","sourcesContent":["import {LinkSingleStatCtrl} from './linksinglestat_ctrl';\n\nexport {\n  LinkSingleStatCtrl as PanelCtrl\n};\n"]}

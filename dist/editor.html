@@ -1,0 +1,49 @@
+<div class="editor-row">
+
+  <div class="section gf-form-group">
+    <h5 class="section-heading">Value</h5>
+
+    <div class="gf-form-inline">
+      <div class="gf-form">
+        <label class="gf-form-label width-12">
+          Text template
+          <info-popover mode="right-normal">
+            <p>Specify an URL (relative or absolute)</p>
+            <span>
+              Use special variables to specify cell values:
+              <br>
+              <em>${__cell_n}</em> refers to Nth column value in current row. Column indexes are started from 0. For instance,
+              <em>${__cell_1}</em> refers to second column's value.
+            </span>
+          </info-popover>
+        </label>
+        <input type="text" class="gf-form-input width-12" ng-model="ctrl.panel.textTemplate" ng-change="ctrl.refresh()" ng-model-onblur>
+      </div>
+      <div class="gf-form">
+        <label class="gf-form-label width-6">Font size</label>
+        <div class="gf-form-select-wrapper">
+          <select class="gf-form-input" ng-model="ctrl.panel.valueFontSize" ng-options="f for f in ctrl.fontSizes" ng-change="ctrl.render()"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="gf-form-inline">
+      <div class="gf-form">
+        <label class="gf-form-label width-12">
+          URL template
+          <info-popover mode="right-normal">
+            <p>Specify an URL (relative or absolute)</p>
+            <span>
+              Use special variables to specify cell values:
+              <br>
+              <em>${__cell_n}</em> refers to Nth column value in current row. Column indexes are started from 0. For instance,
+              <em>${__cell_1}</em> refers to second column's value.
+            </span>
+          </info-popover>
+        </label>
+        <input type="text" class="gf-form-input width-12" ng-model="ctrl.panel.urlTemplate" ng-change="ctrl.refresh()" ng-model-onblur>
+      </div>
+    </div>
+  </div>
+
+</div>
