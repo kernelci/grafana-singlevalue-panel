@@ -6,8 +6,8 @@ class LinkSingleStatCtrl extends MetricsPanelCtrl {
         super($scope, $injector);
 
         const panelDefaults = {
-            textTemplate: 'Please insert name',
-            urlTemplate: 'http://example.com',
+            textTemplate: '',
+            urlTemplate: '',
             valueFontSize: '80%',
         };
 

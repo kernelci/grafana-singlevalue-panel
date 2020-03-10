@@ -69,8 +69,8 @@ System.register(['app/plugins/sdk', '@grafana/data'], function (_export, _contex
                     var _this = _possibleConstructorReturn(this, (LinkSingleStatCtrl.__proto__ || Object.getPrototypeOf(LinkSingleStatCtrl)).call(this, $scope, $injector));
 
                     var panelDefaults = {
-                        textTemplate: 'Please insert name',
-                        urlTemplate: 'http://example.com',
+                        textTemplate: '',
+                        urlTemplate: '',
                         valueFontSize: '80%'
                     };
 
