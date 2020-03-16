@@ -2,3 +2,4 @@ node_modules/
 sync.sh
 package-lock.json
 grafana-singlevalue-panel-*.zip
+dist/
