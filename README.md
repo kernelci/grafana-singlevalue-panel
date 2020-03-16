@@ -1,4 +1,4 @@
-# Link singlestat Grafana plugin
+# Singlevalue Grafana plugin
 
 This plugin is similar to the `singlestat` plugin, with two
 differences:
@@ -13,6 +13,6 @@ differences:
 ## Making a release
 
 If you want a ZIP file for the current release, type `grunt zip`. That
-will leave a file called `grafana-plugin-link-singlestat-VERSION.zip`
+will leave a file called `grafana-singlevalue-panel-VERSION.zip`
 in the current directory, where `VERSION` is the version number in
 `plugin.json`.

@@ -1,7 +1,7 @@
 import { MetricsPanelCtrl } from 'app/plugins/sdk';
 import { PanelEvents } from '@grafana/data';
 
-class LinkSingleStatCtrl extends MetricsPanelCtrl {
+class SingleValueCtrl extends MetricsPanelCtrl {
     constructor($scope, $injector) {
         super($scope, $injector);
 
@@ -25,7 +25,7 @@ class LinkSingleStatCtrl extends MetricsPanelCtrl {
 
     onInitEditMode() {
         this.fontSizes = ['20%', '30%', '50%', '70%', '80%', '100%', '110%', '120%', '150%', '170%', '200%'];
-        this.addEditorTab('Options', 'public/plugins/grafana-linksinglestat-panel/editor.html');
+        this.addEditorTab('Options', 'public/plugins/grafana-singlevalue-panel/editor.html');
     }
 
     onDataReceived(dataList) {
@@ -66,6 +66,6 @@ class LinkSingleStatCtrl extends MetricsPanelCtrl {
     }
 }
 
-LinkSingleStatCtrl.templateUrl = 'module.html';
+SingleValueCtrl.templateUrl = 'module.html';
 
-export { LinkSingleStatCtrl };
+export { SingleValueCtrl };

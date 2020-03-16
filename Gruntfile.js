@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
-    clean: ["dist", "grafana-plugin-link-singlestat"],
+    clean: ["dist", "grafana-singlevalue-panel"],
 
     copy: {
       src_to_dist: {
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         cwd: 'dist',
         expand: true,
         src: ['**/*'],
-        dest: 'grafana-plugin-link-singlestat',
+        dest: 'grafana-singlevalue-panel',
       }
     },
 
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
   grunt.registerTask('zip-create', 'Create a release ZIP file (needs version number)', function() {
     var jsonData = fs.readFileSync("plugin.json");
     var version = JSON.parse(jsonData).info.version;
-    grunt.log.writeln('zip -9r "grafana-plugin-link-singlestat-' + version + '.zip" grafana-plugin-link-singlestat/');
-    child_process.execSync('zip -9r "grafana-plugin-link-singlestat-' + version + '.zip" grafana-plugin-link-singlestat/');
+    grunt.log.writeln('zip -9r "grafana-singlevalue-panel-' + version + '.zip" grafana-singlevalue-panel/');
+    child_process.execSync('zip -9r "grafana-singlevalue-panel-' + version + '.zip" grafana-singlevalue-panel/');
   });
 };

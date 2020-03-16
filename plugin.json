@@ -1,7 +1,7 @@
 {
   "type": "panel",
-  "name": "Link Singlestat",
-  "id": "grafana-linksinglestat-panel",
+  "name": "Singlevalue panel",
+  "id": "grafana-singlevalue-panel",
 
   "info": {
     "description": "Singlestat-like panel for grafana, with links",

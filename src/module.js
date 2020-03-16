@@ -1,5 +1,5 @@
-import {LinkSingleStatCtrl} from './linksinglestat_ctrl';
+import {SingleValueCtrl} from './singlevalue_ctrl';
 
 export {
-  LinkSingleStatCtrl as PanelCtrl
+  SingleValueCtrl as PanelCtrl
 };

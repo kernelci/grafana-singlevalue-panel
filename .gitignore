@@ -1,4 +1,4 @@
 node_modules/
 sync.sh
 package-lock.json
-grafana-plugin-link-singlestat-*.zip
+grafana-singlevalue-panel-*.zip

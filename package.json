@@ -1,7 +1,7 @@
 {
-  "name": "link-singlestat-panel",
+  "name": "grafana-singlevalue-panel",
   "version": "0.0.1-dev",
-  "description": "Singlestat Panel Plugin for Grafana, with links",
+  "description": "Grafana panel plugin to show a single value",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",
