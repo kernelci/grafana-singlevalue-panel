@@ -17,10 +17,9 @@ class SingleValueCtrl extends MetricsPanelCtrl {
             }
         }
 
+        this.events.on(PanelEvents.panelInitialized, this.adjustFontSize.bind(this));
         this.events.on(PanelEvents.editModeInitialized, this.onInitEditMode.bind(this));
         this.events.on(PanelEvents.dataReceived, this.onDataReceived.bind(this));
-        this.events.on(PanelEvents.panelSizeChanged, this.adjustFontSize.bind(this));
-        this.events.on(PanelEvents.panelInitialized, this.adjustFontSize.bind(this));
     }
 
     onInitEditMode() {
