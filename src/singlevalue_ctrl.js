@@ -33,12 +33,12 @@ class SingleValueCtrl extends MetricsPanelCtrl {
         }
 
         const results = dataList[0];
-
-        if (!results) {
+        const data = results && results.rows && results.rows[0];
+        if (!data) {
+            this.text = "No result rows. Make sure you are using 'Table' format and not 'Time series' format.";
+            this.url = null;
             return;
         }
-
-        const data = results.rows && results.rows[0];
 
         // Imitate the "templating" syntax of the table panel plugin
         this.text = this.panel.textTemplate.replace(
