@@ -17,10 +17,9 @@ class SingleValueCtrl extends MetricsPanelCtrl {
             }
         }
 
+        this.events.on(PanelEvents.panelInitialized, this.adjustFontSize.bind(this));
         this.events.on(PanelEvents.editModeInitialized, this.onInitEditMode.bind(this));
         this.events.on(PanelEvents.dataReceived, this.onDataReceived.bind(this));
-        this.events.on(PanelEvents.panelSizeChanged, this.adjustFontSize.bind(this));
-        this.events.on(PanelEvents.panelInitialized, this.adjustFontSize.bind(this));
     }
 
     onInitEditMode() {
@@ -34,12 +33,12 @@ class SingleValueCtrl extends MetricsPanelCtrl {
         }
 
         const results = dataList[0];
-
-        if (!results) {
+        const data = results && results.rows && results.rows[0];
+        if (!data) {
+            this.text = "No result rows. Make sure you are using 'Table' format and not 'Time series' format.";
+            this.url = null;
             return;
         }
-
-        const data = results.rows && results.rows[0];
 
         // Imitate the "templating" syntax of the table panel plugin
         this.text = this.panel.textTemplate.replace(
