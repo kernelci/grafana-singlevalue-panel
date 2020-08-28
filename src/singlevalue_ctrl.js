@@ -34,12 +34,12 @@ class SingleValueCtrl extends MetricsPanelCtrl {
         }
 
         const results = dataList[0];
-        const data = results && results.rows && results.rows[0];
-        if (!data) {
-            this.text = "No result rows. Make sure you are using 'Table' format and not 'Time series' format.";
-            this.url = null;
+
+        if (!results) {
             return;
         }
+
+        const data = results.rows && results.rows[0];
 
         // Substitute variables in the two templates
         const vars = {};
