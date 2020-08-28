@@ -2,7 +2,7 @@ import { MetricsPanelCtrl } from 'app/plugins/sdk';
 import { PanelEvents } from '@grafana/data';
 
 class SingleValueCtrl extends MetricsPanelCtrl {
-    constructor($scope, $injector) {
+    constructor($scope, $injector, templateSrv) {
         super($scope, $injector);
 
         const panelDefaults = {
@@ -17,6 +17,7 @@ class SingleValueCtrl extends MetricsPanelCtrl {
             }
         }
 
+        this.templateSrv = templateSrv;
         this.events.on(PanelEvents.panelInitialized, this.adjustFontSize.bind(this));
         this.events.on(PanelEvents.editModeInitialized, this.onInitEditMode.bind(this));
         this.events.on(PanelEvents.dataReceived, this.onDataReceived.bind(this));
@@ -40,19 +41,14 @@ class SingleValueCtrl extends MetricsPanelCtrl {
             return;
         }
 
-        // Imitate the "templating" syntax of the table panel plugin
-        this.text = this.panel.textTemplate.replace(
-            /\${__cell_(\d+)}/g,
-            (match, cellNumber) => (
-                data[cellNumber]
-            )
-        );
-        this.url = this.panel.urlTemplate.replace(
-            /\${__cell_(\d+)}/g,
-            (match, cellNumber) => (
-                data[cellNumber]
-            )
-        );
+        // Substitute variables in the two templates
+        const vars = {};
+        for (let key in data) {
+            let value = data[key];
+            vars["__cell_" + key] = { value: value, text: value ? value.toString() : '' };
+        }
+        this.text = this.templateSrv.replace(this.panel.textTemplate, vars);
+        this.url = this.templateSrv.replace(this.panel.urlTemplate, vars, encodeURIComponent);
     }
 
     render() {
